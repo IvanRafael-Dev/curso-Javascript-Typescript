@@ -4,21 +4,29 @@ const getTimeFromSeconds = (seconds) => {
     hour12: false,
     timeZone: 'GMT' // local time, iniciar em 00 hora
   });
-}
- 
-console.log(getTimeFromSeconds(10));
+};
 
 const relogio = document.querySelector('.relogio');
 const iniciar = document.querySelector('.iniciar');
 const pausar = document.querySelector('.pausar');
-const zerar = document.querySelector('.zerar');
+// const zerar = document.querySelector('.zerar');
+
+let seconds = 0;
+
+const startTime = () => {
+  const timer = setInterval(() => {
+    seconds++; 
+    relogio.innerHTML = getTimeFromSeconds(seconds);
+  }, 1000)
+  return timer;
+};
 
 iniciar.addEventListener('click', (e) => {
-  alert('cliquei no iniciar')
+  startTime()
 });
 
 pausar.addEventListener('click', (e) => {
-  alert('cliquei no pausar')
+  clearInterval(startTime())
 });
 
 zerar.addEventListener('click', (e) => {
