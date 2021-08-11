@@ -21,19 +21,41 @@ const startTime = () => {
   }, 1000);
 };
 
-iniciar.addEventListener('click', (e) => {
-  clearInterval(timer); // impede que 2 interval rodem ao mesmo tempo
-  relogio.classList.remove('pausado');
-  startTime();
-});
+document.addEventListener('click', ({ target }) => {
+  switch (target.className) {
+    case 'iniciar':
+      clearInterval(timer); // impede que 2 interval rodem ao mesmo tempo
+      relogio.classList.remove('pause');
+      startTime(); break;
 
-pausar.addEventListener('click', (e) => {
-  clearInterval(timer);
-  relogio.classList.add('pausado');
-});
+    case 'pausar':
+      clearInterval(timer);
+      relogio.classList.add('pause'); break;
 
-zerar.addEventListener('click', (e) => {
-  clearInterval(timer);
-  relogio.innerHTML = '00:00:00'
-  seconds = 0;
-});
+    case 'zerar': 
+      clearInterval(timer);
+      relogio.classList.remove('pause');
+      relogio.innerHTML = '00:00:00'
+      seconds = 0; break;
+
+    default: 
+      console.log('Meu Timer!!');
+  }
+})
+
+// iniciar.addEventListener('click', (e) => {
+//   clearInterval(timer); // impede que 2 interval rodem ao mesmo tempo
+//   relogio.classList.remove('pause');
+//   startTime();
+// });
+
+// pausar.addEventListener('click', (e) => {
+//   clearInterval(timer);
+//   relogio.classList.add('pause');
+// });
+
+// zerar.addEventListener('click', (e) => {
+//   clearInterval(timer);
+//   relogio.innerHTML = '00:00:00'
+//   seconds = 0;
+// });
