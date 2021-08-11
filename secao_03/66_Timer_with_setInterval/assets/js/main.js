@@ -18,17 +18,22 @@ const startTime = () => {
   timer = setInterval(() => {
     seconds++; 
     relogio.innerHTML = getTimeFromSeconds(seconds);
-  }, 1000)
+  }, 1000);
 };
 
 iniciar.addEventListener('click', (e) => {
-  clearInterval(timer) // impede que 2 interval rodem ao mesmo tempo
-  startTime()
+  clearInterval(timer); // impede que 2 interval rodem ao mesmo tempo
+  relogio.classList.remove('pausado');
+  startTime();
 });
 
 pausar.addEventListener('click', (e) => {
+  clearInterval(timer);
+  relogio.classList.add('pausado');
 });
 
 zerar.addEventListener('click', (e) => {
+  clearInterval(timer);
+  relogio.innerHTML = '00:00:00'
   seconds = 0;
 });
