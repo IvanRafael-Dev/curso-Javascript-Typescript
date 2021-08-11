@@ -9,26 +9,26 @@ const getTimeFromSeconds = (seconds) => {
 const relogio = document.querySelector('.relogio');
 const iniciar = document.querySelector('.iniciar');
 const pausar = document.querySelector('.pausar');
-// const zerar = document.querySelector('.zerar');
+const zerar = document.querySelector('.zerar');
 
 let seconds = 0;
+let timer;
 
 const startTime = () => {
-  const timer = setInterval(() => {
+  timer = setInterval(() => {
     seconds++; 
     relogio.innerHTML = getTimeFromSeconds(seconds);
   }, 1000)
-  return timer;
 };
 
 iniciar.addEventListener('click', (e) => {
+  clearInterval(timer) // impede que 2 interval rodem ao mesmo tempo
   startTime()
 });
 
 pausar.addEventListener('click', (e) => {
-  clearInterval(startTime())
 });
 
 zerar.addEventListener('click', (e) => {
-  alert('cliquei no zerar')
+  seconds = 0;
 });
