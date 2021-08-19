@@ -1,0 +1,13 @@
+npm i typescript -D
+npm i ts-node -D
+npx tsc index.ts
+
+npm eslint -D
+npm @typescript-eslint/eslint-plugin @typescript-eslint/parser -D
+
+npx tsc --init
+
+
+script mode - script único
+module mode - importacao ou exportacao
+
