@@ -74,8 +74,20 @@ form button:hover {
   border: none;
   background: #dfdfdf;
   cursor: pointer;
+  transition: 300ms;
 }
 
 .btn:hover {
   background: #9e9e9e;
+  transition: 300ms;
+}
+
+.btn-eq {
+  background: #8c44ff;
+  transition: 300ms;
+}
+.btn-eq:hover {
+  background: #5c0297;
+  color:aliceblue;
+  transition: 300ms;
 }
