@@ -38,8 +38,8 @@ console.log(pessoa1.fala('javascript'));
 console.log(pessoa2.fala('comunicação não violenta'));
 
 pessoa1.nome_completo = 'Chico Buarque de Hollanda'; // nao funciona se o metodo for apenas de getter
-console.log(pessoa1.nome);
-console.log(pessoa1.sobrenome);
+console.log(`Nome: ${pessoa1.nome}`);
+console.log(`Sobrenome: ${pessoa1.sobrenome}`);
 console.log(pessoa1.nome_completo);
 console.log(pessoa2.nome_completo);
 
