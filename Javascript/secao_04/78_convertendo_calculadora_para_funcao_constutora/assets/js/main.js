@@ -6,27 +6,17 @@ function Calculadora() {
     pressionaEnter();
   };
   
-  const btnParaDisplay= (valor) => {
-    display.value += valor;
-  };
-
-  const clearDisplay = () => {
-    display.value = '';
-  };
+  btnParaDisplay = (valor) => display.value += valor;
+  clearDisplay = () => display.value = '';
+  btnDel = (currentValue) => display.value = currentValue.slice(0, -1);
   
-  const btnDel = (currentValue) => {
-    display.value = currentValue.slice(0, -1);      
-  };
-  
-  const pressionaEnter = () => {
+  pressionaEnter = () => {
     display.addEventListener('keyup', (e) => {
-      if (e.keyCode === 13 && display.value) {
-        realizaConta();
-      }
+      if (e.keyCode === 13 && display.value) realizaConta()
     });
   };
 
-  const realizaConta = () => {
+  realizaConta = () => {
     try {
       display.value = eval(display.value);
     } catch (e) {
@@ -39,21 +29,10 @@ function Calculadora() {
   const cliqueBotoes = () => {
     document.addEventListener('click', (e) => {
       const el = e.target;
-      if (el.classList.contains('btn-num')) {
-        btnParaDisplay(el.innerText);
-      }
-
-      if (el.classList.contains('btn-clear')) {
-        clearDisplay();
-      }
-
-      if (el.classList.contains('btn-del')) {
-        btnDel(display.value);
-      }
-
-      if (el.classList.contains('btn-eq')) {
-        realizaConta()
-      }
+      if (el.classList.contains('btn-num')) btnParaDisplay(el.innerText)
+      if (el.classList.contains('btn-clear')) clearDisplay()
+      if (el.classList.contains('btn-del')) btnDel(display.value)
+      if (el.classList.contains('btn-eq')) realizaConta()
     });
   };
   
