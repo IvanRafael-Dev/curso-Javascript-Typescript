@@ -6,7 +6,10 @@ function Calculadora() {
     pressionaEnter();
   };
   
-  btnParaDisplay = (valor) => display.value += valor;
+  btnParaDisplay = (valor) => {
+    display.value += valor;
+    display.focus();
+  }
   clearDisplay = () => display.value = '';
   btnDel = (currentValue) => display.value = currentValue.slice(0, -1);
   
@@ -34,8 +37,7 @@ function Calculadora() {
       if (el.classList.contains('btn-del')) btnDel(display.value)
       if (el.classList.contains('btn-eq')) realizaConta()
     });
-  };
-  
+  };  
 }
 
 const calc = new Calculadora();
