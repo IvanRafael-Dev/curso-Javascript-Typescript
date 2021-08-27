@@ -10,6 +10,7 @@ function Calculadora() {
     display.value += valor;
     display.focus();
   }
+
   clearDisplay = () => display.value = '';
   btnDel = (currentValue) => display.value = currentValue.slice(0, -1);
   
@@ -29,7 +30,7 @@ function Calculadora() {
     }
   };
   
-  const cliqueBotoes = () => {
+  cliqueBotoes = () => {
     document.addEventListener('click', (e) => {
       const el = e.target;
       if (el.classList.contains('btn-num')) btnParaDisplay(el.innerText)
