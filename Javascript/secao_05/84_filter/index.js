@@ -35,3 +35,21 @@ console.log(numerosImpares);
 const imparesUsandoArrayPares = numeros.filter((num) => !numerosPares.includes(num));
 console.log(imparesUsandoArrayPares);
 
+// retorne as pessoas que tem o nome com 5 letras ou mais 
+const pessoas = [
+  { nome: 'Ivan', idade: 39 },
+  { nome: 'Amelia', idade: 86 },
+  { nome: 'Fifi', idade: 1 },
+  { nome: 'Ticinha', idade: 4 },
+  { nome: 'Paty', idade: 33 },
+  { nome: 'Teca', idade: 13 },
+];
+
+const nome5LetrasOuMais = pessoas.filter((pessoa) => pessoa.nome.length >= 5);
+ console.log(nome5LetrasOuMais);
+
+const pessoasCom50AnosOuMais = pessoas.filter((pessoa) => pessoa.idade >= 50);
+console.log(pessoasCom50AnosOuMais);
+
+const nomesQueTerminamEmA = pessoas.filter((pessoa) => pessoa.nome.endsWith('a'))
+console.log(nomesQueTerminamEmA);
