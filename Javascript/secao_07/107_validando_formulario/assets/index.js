@@ -5,10 +5,22 @@ class ValidaFormulario {
   }
 
   eventos() {
-    this.formulario.addEventListener('click', (e) => {
-      
+    this.formulario.addEventListener('submit', (e) => {
+      this.handleSubmit(e);
     });
   }
+  
+  handleSubmit(e) {
+    e.preventDefault();
+    const isValidInfo = this.isInfoValid()
+    console.log('teste');
+  }
+
+  // isInfoValid() {
+  //   let valid = true;
+
+  //   for (let field of this.)
+  // }
 }
 
 const validaForm = new ValidaFormulario();

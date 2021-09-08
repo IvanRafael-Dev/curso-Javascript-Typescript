@@ -44,6 +44,7 @@ class CPF {
 
 const cpf = new CPF('300.771.998-47');
 // const cpf = new CPF('22222222222');
+
 if (cpf.valida()) {
   console.log(`O CPF: ${cpf.cpfLimpo} é válido `);
 } else {
