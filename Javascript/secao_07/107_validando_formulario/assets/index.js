@@ -22,8 +22,7 @@ class ValidaFormulario {
 
     for (let field of fields) {
       if (!field.value) {
-        let label = field.parentElement.innerText; // poderia ser field.name
-        // console.log(label);
+        let label = field.parentElement.innerText; // poderia ser field.name caso inputs tenham name
         this.throwError(field, `O campo "${label}" não pode estar em branco`)
       }
     }       
