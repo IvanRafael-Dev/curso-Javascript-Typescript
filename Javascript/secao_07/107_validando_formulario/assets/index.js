@@ -16,11 +16,26 @@ class ValidaFormulario {
     console.log('teste');
   }
 
-  // isInfoValid() {
-  //   let valid = true;
+  isInfoValid() {
+    const fields = document.querySelectorAll('.fields')
+    let valid = true;
 
-  //   for (let field of this.)
-  // }
+    for (let field of fields) {
+      if (!field.value) {
+        let label = field.parentElement.innerText; // poderia ser field.name
+        // console.log(label);
+        this.throwError(field, `O campo "${label}" não pode estar em branco`)
+      }
+    }       
+  }
+
+  throwError(field, message) {
+    const div = document.createElement('div');
+    div.innerHTML = message;
+    div.classList.add('error-message');
+    field.insertAdjacentElement('afterend', div);
+    console.log('cai aqui');
+  }
 }
 
 const validaForm = new ValidaFormulario();
