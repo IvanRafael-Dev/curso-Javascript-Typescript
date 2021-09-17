@@ -13,17 +13,23 @@ class ValidaFormulario {
   handleSubmit(e) {
     e.preventDefault();
     const isValidInfo = this.isInfoValid()
-    console.log('teste');
   }
 
   isInfoValid() {
-    const fields = document.querySelectorAll('.fields')
+    const fields = document.querySelectorAll('.fields');
     let valid = true;
+    const errorMessages = this.formulario.querySelectorAll('.error-message');
+    for (let message of errorMessages) message.remove();
 
     for (let field of fields) {
       if (!field.value) {
         let label = field.parentElement.innerText; // poderia ser field.name caso inputs tenham name
-        this.throwError(field, `O campo "${label}" não pode estar em branco`)
+        this.throwError(field, `O campo "${label}" não pode estar em branco`);
+        valid = false;
+      }
+
+      if (field.classList.contains('cpf')) {
+        console.log(field.value)
       }
     }       
   }
@@ -33,7 +39,6 @@ class ValidaFormulario {
     div.innerHTML = message;
     div.classList.add('error-message');
     field.insertAdjacentElement('afterend', div);
-    console.log('cai aqui');
   }
 }
 
