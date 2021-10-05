@@ -47,7 +47,8 @@ const cpf = new CPF('300.771.998-47');
 
 if (cpf.valida()) {
   console.log(`O CPF: ${cpf.cpfLimpo} é válido `);
+  return true;
 } else {
   console.log(`O CPF: ${cpf.cpfLimpo} é inválido `);
-
+  return false;
 }
