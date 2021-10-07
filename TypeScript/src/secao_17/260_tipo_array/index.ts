@@ -18,5 +18,11 @@ function concatToUpperCase(array: Array<string>): string {
   return array.reduce((acc, curr) => acc + curr.toUpperCase(), '');
 }
 
+function upperCasedArray(array: string[]): string[] {
+  return array.map((value) => value.toUpperCase());
+}
+
 const concatToUpper = concatToUpperCase(['l', 'i', 'n', 'u', 'x']);
+const upperArray = upperCasedArray(['a', 'b', 'c']);
 console.log(concatToUpper);
+console.log(upperArray);
