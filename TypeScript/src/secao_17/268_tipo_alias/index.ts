@@ -42,10 +42,10 @@ const ivan: Pilot = {
 
 console.log(ivan);
 
-export function setNewPilot(person: Person, team: Team): Pilot {
+export function setNewPilot(pessoa: Person, team: Team): Pilot {
   return {
-    ...person,
-    team: { ...team },
+    ...pessoa,
+    team,
   };
 }
 
