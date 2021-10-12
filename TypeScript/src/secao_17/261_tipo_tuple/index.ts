@@ -8,9 +8,9 @@ const clienteImutavel: readonly [number, string] = [100, 'teste'];
 console.log(dadosCliente1);
 
 dadosCliente1[0] = 10; // temos que manter o mesmo tipo
-clienteImutavel.push('teste2'); // erro
-clienteImutavel.pop('teste3'); // erro
-clienteImutavel[0] = 10; // erro
+// clienteImutavel.push('teste2'); // erro
+// clienteImutavel.pop('teste3'); // erro
+// clienteImutavel[0] = 10; // erro
 
 console.log(dadosCliente1);
 console.log(dadosCliente2);
