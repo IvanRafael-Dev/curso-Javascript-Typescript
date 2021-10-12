@@ -1,6 +1,6 @@
 export class Musica {
-  public readonly nome: string;
-  private readonly autores: Autores[] = [];
+  public readonly nome: string; // acesso dentro eo fora da classe
+  private readonly autores: Autores[] = []; // acesso somente dentro da classe
   protected readonly registro: string;
 
   constructor(nome: string, registro: string) {
@@ -25,7 +25,7 @@ export class Autores {
 }
 
 const nenem = new Musica('neném', 'r3-31424');
-const ivan = new Autores('Ivan', 'Rafael');
+// const ivan = new Autores('Ivan', 'Rafael');
 const Titi = new Autores('Titi', 'Cabral');
 const Fifi = new Autores('Fifi', 'Duprat');
 
