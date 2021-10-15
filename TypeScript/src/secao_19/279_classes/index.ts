@@ -25,12 +25,13 @@ export class Autores {
 }
 
 const nenem = new Musica('neném', 'r3-31424');
-// const ivan = new Autores('Ivan', 'Rafael');
+const ivan = new Autores('Ivan', 'Rafael');
 const Titi = new Autores('Titi', 'Cabral');
 const Fifi = new Autores('Fifi', 'Duprat');
 
 nenem.addAutor(Fifi);
 nenem.addAutor(Titi);
 console.log(nenem);
+nenem.addAutor(ivan);
 
 nenem.showAutor();
